@@ -81,8 +81,9 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     job_consumption = int(job_consumption)
 
     used_material = -abs(job_consumption) * -abs(num_jobs)
-    rem_material = -abs(total_material) - -abs(used_material)
-    rem_material=  str(rem_material) + material_units
+    used2_material = -abs(used_material)
+    rem_material = -abs(total_material) - -abs(used2_material)
+    rem_material = str(rem_material) + material_units
     return(rem_material)
 
 print(material_waste(85,'kg',5,25))
