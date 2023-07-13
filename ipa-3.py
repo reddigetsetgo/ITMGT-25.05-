@@ -104,6 +104,9 @@ def tic_tac_toe(board):
     characters = []
     winner = None
 
+    if board == " ":
+        return "NO WINNER"
+    
     for i in board:
         for j in i:
             characters.append(j)
@@ -163,6 +166,7 @@ def tic_tac_toe(board):
     else :
         return winner
 
+print(tic_tac_toe(" "))
 
 legs1 = {
      ("upd","admu"):{
