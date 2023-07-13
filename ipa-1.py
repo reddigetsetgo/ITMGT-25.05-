@@ -73,10 +73,19 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
 
-    material_waste = str((num_jobs * job_consumption) - total_material) + material_units
-    return(material_waste)
+    #Problem: material_waste functin returning negative outputs 
 
-print(material_waste(100,'kg',5,25))
+    total_material = int(total_material)
+    material_units = str(material_units)
+    num_jobs = int(num_jobs)
+    job_consumption = int(job_consumption)
+
+    used_material = job_consumption * num_jobs
+    rem_material = -abs(total_material) - -abs(used_material)
+    rem_material=  str(rem_material) + material_units
+    return(rem_material)
+
+print(material_waste(85,'kg',5,25))
 
 def interest(principal, rate, periods):
     '''Interest.
@@ -107,12 +116,15 @@ def interest(principal, rate, periods):
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
 
-    new_rate = float(rate/100) #coversion of percentage to decimal represetation 
+    # Problem - Completely Wrong? 
 
-    quantity = (new_rate*periods) 
-    final_value = int(principal*quantity)
+    principal = int(principal)
+    rate = float(rate)
+    periods = int(periods)
 
-    return(final_value)
+    interest = principal * (rate * periods)
+    final = principal + interest
+    return(int(final))
 
 print(interest(500,2.5,5))
 
