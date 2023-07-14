@@ -80,13 +80,13 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     num_jobs = int(num_jobs)
     job_consumption = int(job_consumption)
 
-    used_material = -abs(job_consumption) * -abs(num_jobs)
-    used2_material = -abs(used_material)
-    rem_material = -abs(total_material) - -abs(used2_material)
-    rem_material = str(rem_material) + material_units
-    return(rem_material)
+    used_material = num_jobs * job_consumption 
+    rem_material = total_material - used_material
+    rem2_material = abs(rem_material)
+    rem3_material = str(rem2_material)
+    return(rem3_material + material_units)
 
-print(material_waste(85,'kg',5,25))
+print(material_waste(100,'kg',5,50))
 
 def interest(principal, rate, periods):
     '''Interest.
