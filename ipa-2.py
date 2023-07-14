@@ -250,8 +250,20 @@ def scytale_cipher(message, shift):
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     
+    if len(message) % shift != 0:
+        message += "_" * (shift - (len(message) % shift))
+    
+    encoded_message = ""
+    
+    for i in range(len(message)):
+        index = (i // shift) + (len(message) // shift) * (i % shift)
+        encoded_message += message[index]
+    
+    return encoded_message
 
-
+print(scytale_cipher("INFORMATION_AGE", 3))
+print(scytale_cipher("INFORMATION_AGE", 4))
+print(scytale_cipher("ALGORITHMS_ARE_IMPORTANT", 8))
 
 def scytale_decipher(message, shift):
     '''Scytale De-cipher.
@@ -280,5 +292,23 @@ def scytale_decipher(message, shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    
+    new_message = list(message)
+    decoded_message = ""
+    len_message = len(message)
+    num_rows = len_message // shift
 
+    for row in range(shift):
+        for col in range(num_rows):
+            index = col * shift + row
+            
+            if index < len_message:
+                decoded_message += (message[index])
+    
+    Final_Message = "".join(decoded_message)
+
+    return(Final_Message)
+
+print(scytale_decipher("IMNNA_FTAOIGROE", 3)) 
+print(scytale_decipher("AOTSRIOALRH_EMRNGIMA_PTT", 8))
+print(scytale_decipher("IRIANMOGFANEOT__", 4))
