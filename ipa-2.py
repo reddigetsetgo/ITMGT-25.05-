@@ -38,10 +38,23 @@ def shift_letter(letter, shift):
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
 
-    if letter == " ": 
+    shifted = ord(letter) + shift
+    
+    if letter == " ":
         return(" ")
     else:
-        return(chr(ord(letter) + shift%26))
+        if shifted > 90:
+            shifted = shifted - 26
+            shifted = chr(shifted)
+            return(shifted)
+        else:
+            shifted = chr(shifted)
+            return(shifted)
+            
+    #f letter == " ": 
+        #return(" ")
+    #else:
+       #return(chr(ord(letter) + shift%26))
     
 print(shift_letter("A", 27))
 
