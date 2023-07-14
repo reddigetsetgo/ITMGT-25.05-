@@ -100,12 +100,10 @@ def tic_tac_toe(board):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
+    
     size = (len(board))
     characters = []
     winner = None
-
-    if board == " ":
-        return "NO WINNER"
     
     for i in board:
         for j in i:
@@ -161,12 +159,10 @@ def tic_tac_toe(board):
                 winner = i[0]
                 break
 
-    if winner == None :
+    if winner == None or winner == '':
         return "NO WINNER"
     else :
         return winner
-
-print(tic_tac_toe(" "))
 
 legs1 = {
      ("upd","admu"):{
