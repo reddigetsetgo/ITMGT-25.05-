@@ -37,25 +37,20 @@ def shift_letter(letter, shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-
-    shifted = ord(letter) + shift
-    
-    if letter == " ":
+            
+    if letter == " ": 
         return(" ")
     else:
-        if shifted > 90:
-            shifted = shifted - 26
-            shifted = chr(shifted)
-            return(shifted)
+        letter = ord(letter) + shift%26 
+        
+        if letter > 90: 
+            letter = letter - 26 
+            letter = chr(letter)
         else:
-            shifted = chr(shifted)
-            return(shifted)
-            
-    #f letter == " ": 
-        #return(" ")
-    #else:
-       #return(chr(ord(letter) + shift%26))
+            letter = chr(letter)
     
+    return(letter)
+
 print(shift_letter("A", 27))
 
 def caesar_cipher(message, shift):
