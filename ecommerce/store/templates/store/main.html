@@ -69,7 +69,7 @@
     .hello-msg{
       font-size: 18px;
       color: #fff;
-      margin-right: 20px;
+      margin-right: 28px;
 
     }
   </style>
@@ -78,7 +78,7 @@
   .search-msg{
     font-size: 18px;
     color: #fff;
-    margin-right: 800px;
+    margin-right: 700px;
 
   }
 </style>
@@ -97,11 +97,15 @@
           </ul>
         
           <div class="search-msg">
+          <ul class="navbar-nav mr-auto">
+
           <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search">
             <button type="button" class="btn btn-light" type="submit">Search</button>
           </form>
+          </ul>
           </div>
+          
 
           <span class="hello-msg"> Hello, {{request.user}} </span>
         

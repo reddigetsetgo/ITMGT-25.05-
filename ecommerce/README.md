@@ -24,7 +24,7 @@
     * Implement features like quotation updates and notifications.
 
 # Download & Setup Instructions
-* 1 - Clone project: git clone https://github.com/reddigetsetgo/ITMGT-25.05-.git
+* 1 - Clone project: git clone https://github.com/divanov11/proshop_django/
 * 2 - cd ecommerce
 * 3 - Create virtual environment: virtualenv myenv
 * 4 - myenv\scripts\activate

@@ -114,7 +114,6 @@ def store(request):
 	return render(request, 'store/store.html', context)
 
 def index(request):
-
 	if 'q' in request.GET:
 		q = request.GET['q']
 		data = Product.objects.filter(name__icontains=q)
@@ -123,7 +122,7 @@ def index(request):
 	context = {
 		'data': data
 	}
-	return render(request,'store/product_detail.html', context)
+	return render(request,'store/store.html', context)
 
 def cart(request):
 	data = cartData(request)
